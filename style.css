@@ -1,0 +1,413 @@
+/*Import Google Fonts (Playfair Display & Inter)*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap');
+
+/* 
+   1. Base & Global Styles (Element Selectors, Fonts, Colors)
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.7;
+    color: #5e3023; /* Deep Warm Walnut */
+    background-color: #f3e9dc; /* Soft Cream */
+    padding: 30px 20px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Base link styling & Hover effect */
+a {
+    color: #c08552; /* Warm Amber */
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #5e3023;
+    border-bottom-color: #5e3023;
+}
+
+/* Headings with Serif Typography */
+h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: #5e3023;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-bottom: 2px solid rgba(94, 48, 35, 0.15); /* Subtle walnut accent line */
+    padding-bottom: 8px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    letter-spacing: 0.02em;
+}
+
+h3{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/*
+   2. Layout & Container (ID Selector)
+*/
+#cv-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 50px 60px;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(94, 48, 35, 0.06);
+    border: 1px solid rgba(94, 48, 35, 0.08);
+}
+
+/* 
+   3. Header & Navigation (Styling plain nav > a tags)
+ */
+header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+header h1 {
+    color: #5e3023;
+    margin-bottom: 6px;
+}
+
+header p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #c08552;
+}
+
+/* Cream box container wrapper */
+nav {
+    display: inline-flex; /* Keeps links side-by-side inside container */
+    justify-content: center;
+    align-items: center;
+    gap: 32px; /* Spacing between navigation links */
+    margin-top: 24px;
+    padding: 12px 24px;
+    background-color: #f3e9dc; /* Light Cream background */
+    border: 3px solid rgba(192, 133, 82, 0.25);
+    border-radius: 30px;
+}
+
+/* Navigation link pills */
+nav a {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #5e3023;
+    background-color: #ffffff; /* White pills to pop against cream box */
+    padding: 8px 18px;
+    border-radius: 30px;
+    border: 1px solid rgba(192, 133, 82, 0.35);
+    border-bottom: 1px solid rgba(192, 133, 82, 0.35); /* Overrides global link underline */
+    transition: all 0.25s ease-in-out;
+}
+
+nav a:hover {
+    background-color: #c08552;
+    color: #ffffff;
+    border-color: #c08552;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(192, 133, 82, 0.25);
+}
+/* 
+   4. Content Sections (Class Selectors)
+ */
+.section {
+    margin-bottom: 35px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+    font-size: 0.92rem;
+}
+
+/* Skills list layout */
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+}
+
+.skills-list li {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3e9dc;
+    color: #5e3023;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    border: 1px solid rgba(192, 133, 82, 0.3);
+}
+
+/* Project item cards */
+.project-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(94, 48, 35, 0.1);
+    border-left: 4px solid #c08552;
+    padding: 20px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(94, 48, 35, 0.08);
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    #cv-container {
+        padding: 30px 20px;
+        margin: 10px auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    /* Stack links vertically inside cream box on mobile */
+    nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* =====================================================
+   LAB 5 ADDITIONS
+   ===================================================== */
+
+/* Task 2: hidden extra About content */
+.hidden {
+    display: none;
+}
+
+/* Buttons (theme, print, show more, filters) – match nav pill style */
+button {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #5e3023;
+    background-color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 30px;
+    border: 1px solid rgba(192, 133, 82, 0.35);
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+
+button:hover,
+button.active {
+    background-color: #c08552;
+    color: #ffffff;
+    border-color: #c08552;
+}
+
+#toggle-about {
+    margin-top: 10px;
+}
+
+/* Task 4: filter buttons */
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+/* Task 3: category badge on project cards */
+.badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0 10px;
+    margin-bottom: 6px;
+    border: 1px solid #c08552;
+    border-radius: 20px;
+    color: #c08552;
+}
+
+.project-card p {
+    margin-bottom: 6px;
+}
+
+/* Task 1: dark mode (same palette, inverted) */
+body,
+.cv-container,
+.project-card,
+nav,
+nav a,
+button {
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body.dark {
+    background-color: #1e1511;
+    color: #f3e9dc;
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+    color: #f3e9dc;
+}
+
+body.dark h2 {
+    border-bottom-color: rgba(243, 233, 220, 0.2);
+}
+
+body.dark .cv-container,
+body.dark #cv-container,
+body.dark .project-card {
+    background-color: #2b1f19;
+    border-color: rgba(243, 233, 220, 0.12);
+}
+
+body.dark nav {
+    background-color: #1e1511;
+}
+
+body.dark nav a,
+body.dark button {
+    background-color: #3a2a22;
+    color: #f3e9dc;
+    border-color: rgba(192, 133, 82, 0.5);
+}
+
+body.dark nav a:hover,
+body.dark button:hover,
+body.dark button.active {
+    background-color: #c08552;
+    color: #1e1511;
+}
+
+body.dark .skills-list li {
+    background-color: #3a2a22;
+    color: #f3e9dc;
+}
+
+body.dark a:hover {
+    color: #f3e9dc;
+    border-bottom-color: #f3e9dc;
+}
+
+body.dark nav a:hover {
+    border-bottom-color: #c08552;
+}
+
+/* Mobile: make nav buttons match nav links */
+@media (max-width: 600px) {
+    nav button {
+        width: 100%;
+    }
+}
+
+/* Task 5: print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    /* show the full About text on paper */
+    .hidden {
+        display: block !important;
+    }
+
+    body,
+    body.dark {
+        background: #ffffff;
+        color: #000000;
+        padding: 0;
+    }
+
+    .cv-container,
+    #cv-container,
+    body.dark .cv-container,
+    body.dark #cv-container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        background: #ffffff;
+    }
+
+    body.dark h1,
+    body.dark h2,
+    body.dark h3 {
+        color: #5e3023;
+    }
+
+    .project-card,
+    body.dark .project-card {
+        background: #ffffff;
+        box-shadow: none;
+        break-inside: avoid;
+    }
+
+    .cv-section,
+    .education-item {
+        break-inside: avoid;
+    }
+
+    a {
+        color: #000000;
+        border-bottom: none;
+    }
+}
